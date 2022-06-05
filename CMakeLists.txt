@@ -1224,9 +1224,9 @@ if(ALSOFT_EMBED_HRTF_DATA)
 
         add_custom_command(OUTPUT "${outfile}"
             COMMAND ${CMAKE_COMMAND} -D "INPUT_FILE=${infile}" -D "OUTPUT_FILE=${outfile}"
-                -D "VARIABLE_NAME=${VARNAME}" -P "${CMAKE_MODULE_PATH}/bin2h.script.cmake"
+                -D "VARIABLE_NAME=${VARNAME}" -P "${OpenAL_SOURCE_DIR}/cmake/bin2h.script.cmake"
             WORKING_DIRECTORY "${OpenAL_SOURCE_DIR}"
-            DEPENDS "${infile}" "${CMAKE_MODULE_PATH}/bin2h.script.cmake"
+            DEPENDS "${infile}" "${OpenAL_SOURCE_DIR}/cmake/bin2h.script.cmake"
             VERBATIM
         )
         set(ALC_OBJS  ${ALC_OBJS} "${outfile}")
